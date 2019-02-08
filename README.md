@@ -2,6 +2,8 @@
 
 Simple responsive grid system layout for React. Also you can inject the breakpoints in any component.
 
+Live example: [https://codesandbox.io/s/88vyq66yk0](https://codesandbox.io/s/88vyq66yk0)
+
 **Warning**
 
 This component was created just for fun. You can find better components in: [awesome-styled-components](https://github.com/styled-components/awesome-styled-components#grid-systems) repository.
@@ -77,6 +79,7 @@ import { withResposive } from 'styled-responsive'
 const StyleColumn = withResposive(styled.div`
     padding: 6px;
     text-align: center;
+    box-sizing: border-box;
 `)
 
 export default const Box = props => {
