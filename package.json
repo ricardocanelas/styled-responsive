@@ -1,0 +1,41 @@
+{
+  "name": "styled-responsive",
+  "version": "1.0.1",
+  "license": "MIT",
+  "author": "Ricardo Canelas",
+  "homepage": "https://github.com/ricardocanelas/styled-responsive",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ricardocanelas/styled-responsive"
+  },
+  "main": "./dist/index.js",
+  "files": ["/dist"],
+  "keywords": [
+    "react",
+    "css",
+    "styled",
+    "responsive",
+    "grid",
+    "react-component"
+  ],
+  "scripts": {
+    "build": "babel ./src/index.js --out-dir dist",
+    "prepublish": "npm run build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "styled-components": "^4.1.3"
+  },
+  "peerDependencies": {
+    "react": ">= 16.3",
+    "react-dom": ">= 16.3",
+    "styled-components": ">= 4.0"
+  }
+}
