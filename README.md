@@ -2,7 +2,7 @@
 
 Simple responsive grid system layout for React. Also you can inject the breakpoints in any component.
 
-Live example: [https://codesandbox.io/s/88vyq66yk0](https://codesandbox.io/s/88vyq66yk0)
+Live example: [https://codesandbox.io/s/n56nvvkm90](https://codesandbox.io/s/n56nvvkm90)
 
 **Warning**
 
