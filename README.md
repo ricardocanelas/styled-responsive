@@ -16,93 +16,75 @@ yarn add @ricardocanelas/styled-responsive
 
 ### Required Dependencies
 
-- `react` > 16 or higher
-- `styled-components` 4 or higher
-
 ## 👉🏻 Code Examples
 
+Using with the `styled-components` lib.
+
 ```
-import React, { Component } from "react";
-import Container, { Responsive } from "styled-responsive";
+import React, { Component } from 'react';
+import styled, { ThemeProvider } from 'styled-components'
+import { responsive, media } from '@ricardocanelas/styled-responsive';
 
-/**
- * Configure breakpoints in any file which is being called
- * on the top aplication level (e.g. App.js, utils.js, etc.)
- */
+const theme = {
+  breakpoints: {
+    xs: 0,
+    sm: '48em',
+    md: '64em',
+    lg: '75em',
+  },
+}
 
-Responsive.setBreakpoints({
-  xs: { min: "0", width: "100%" },
-  sm: { min: "576px", width: "576px" },
-  md: { min: "768px", width: "768px" },
-  lg: { min: "992px", width: "992px" },
-  xl: { min: "1200px", width: "1200px" }
-});
+const Flex = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
+const Grid = styled.div`
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  ${media('xs')`max-width: 100%;`}
+  ${media('sm')`max-width: 49em;`}
+  ${media('md')`max-width: 65em;`}
+  ${media('lg')`max-width: 76em;`}
+`
+
+const GridItem = styled.div`
+  ${responsive('width')}
+  ${responsive('background-color', 'bg')}
+  ${media('lg')`
+    padding: 10px;
+    box-sizing: border-box;
+  `}
+`
 
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <Container>
-          <h1>Hello World!</h1>
-        </Container>
-
-        <Container>
-          {({ current, breakpoints, visibles }) => (
-            <div>
-              <h1>
-                Example with 'RenderProps' <b>({current})</b>
-              </h1>
-
-              <li>Current: {current}</li>
-              <li>Info: {JSON.stringify(breakpoints[current])}</li>
-              <li>Visibles: {JSON.stringify(visibles)}</li>
-            </div>
-          )}
-        </Container>
-      </React.Fragment>
+      <ThemeProvider theme={theme}>
+        <>
+          <Grid>
+            <Flex>
+              <GridItem
+                xs='100%' sm='50%' md='33.3%' lg='10%'
+                md-bg='blue' lg-bg='red'>
+                First Item
+              </GridItem>
+              <GridItem
+                xs='100%' sm='50%' md='33.3%' lg='90%'
+                md-bg='blue' lg-bg='lightcoral'>
+                Second item
+              </GridItem>
+            </Flex>
+          </Grid>
+        </>
+      </ThemeProvider>
     );
   }
 }
 
 export default App;
 ```
-
-### **Another Example:**
-
-```
-// Box.js
-
-import React from 'react'
-import styled from 'styled-components'
-import { withResposive } from 'styled-responsive'
-
-const StyleColumn = withResposive(styled.div`
-    padding: 6px;
-    text-align: center;
-    box-sizing: border-box;
-`)
-
-export default const Box = props => {
-    return <StyleColumn {...props} />
-}
-
-// App.js
-
-import React from "react";
-import Container from "styled-responsive";
-import Box from "./Box";
-
-const App = props => {
-  return (
-    <Container>
-      <Box xs="12" sm="6" md="4" lg="3">A</Box>
-      <Box xs="12" sm="6" md="4" lg="3">B</Box>
-      <Box xs="12" sm="6" md="4" lg="3" xl="12">C</Box>
-    </Container>
-  )
-}
-```
-
 
 ## License
 

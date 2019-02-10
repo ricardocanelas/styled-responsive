@@ -1,6 +1,6 @@
 {
   "name": "@ricardocanelas/styled-responsive",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Simple responsive grid system layout for React.",
   "license": "MIT",
   "author": "Ricardo Canelas",
@@ -35,8 +35,5 @@
     "styled-components": "^4.1.3"
   },
   "peerDependencies": {
-    "react": ">= 16.3",
-    "react-dom": ">= 16.3",
-    "styled-components": ">= 4.0"
   }
 }
