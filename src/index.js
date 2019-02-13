@@ -1,4 +1,3 @@
-
 export const responsive = (property, sufix) => (...args) => {
   const props = args[0];
   const theme = args[0].theme;
@@ -30,7 +29,6 @@ export const media = (breakpoint) => {
         }
       })
     }
-
     return out;
   }
 }
