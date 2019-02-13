@@ -1,6 +1,6 @@
 {
   "name": "@ricardocanelas/styled-responsive",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Simple responsive grid system layout for React.",
   "license": "MIT",
   "author": "Ricardo Canelas",
